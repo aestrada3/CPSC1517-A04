@@ -8,7 +8,9 @@
     @RenderSection("head", required: false)
 </head>
 <body>
-    @RenderSection("Banner")
+    <div class="jumbotron">
+        @RenderSection("Banner")
+    </div>
     @RenderBody()
     <hr style="height:5px" /> 
     @RenderSection("footer", required: false)
