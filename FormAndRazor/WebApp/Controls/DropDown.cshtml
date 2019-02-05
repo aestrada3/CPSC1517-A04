@@ -18,8 +18,8 @@
     //no button descision (only one button)
     //validation
     //the validation in this sample will be done inside the switch
-    //if a page was not selected then the switch default will handle 
-    //      the select ... option
+    //if a page was not selected then the switch default will handle
+    //     the select ... option
     switch(selection.ToUpper())
     {
         case "TEXTBOXES":
@@ -42,19 +42,20 @@
             }
         default:
             {
-                    <p><span style="color:firebrick"><strong>Select the sample you wish to view.</strong></span></p>
-                    break;
-                }
-        }
+                <p><span style="color:firebrick"><strong>
+                     Select the sample you wish to view.</strong></span></p>
+                break;
+            }
     }
+}
 
 <form id="theform" method="post">
     <div class="row">
-        <div class="co-md-offset-4">
+        <div class="col-md-offset-4">
             <label for="pageselection">Select control example:</label>
             &nbsp;&nbsp;
             <select id="pageselection" name="pageselection">
-                <option value="">Select ...</option>
+                <option value="">select ...</option>
                 <option value="TextBoxes">TextBoxes</option>
                 <option value="RadioButtons">RadioButtons</option>
                 <option value="CheckBoxes">CheckBoxes</option>

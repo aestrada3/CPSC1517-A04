@@ -38,37 +38,37 @@
     }
     else
     {
-
         if (string.IsNullOrEmpty(language) ||
             string.IsNullOrEmpty(script))
         {
-        <p>
-            <span style="color:firebrick">
-                Make a choice from both groups.
-            </span>
-        </p>
+            <p>
+                <span style="color:firebrick">
+                    Make a choice from both groups.
+                </span>
+            </p>
         }
         else
         {
             if (language.Equals("C#"))
             {
-            <p>You will greatly enjoy CPSC1517 because we are coding with C#.</p>
+                <p>You will greatly enjoy CPSC1517 because we are coding with C#.</p>
             }
             else
             {
-            <p>Too bad. CPSC1517 codes with C#.</p>
+                <p>Too bad. CPSC1517 codes with C#.</p>
             }
             if (script.Equals("Razor"))
             {
-            <p>You will greatly enjoy CPSC1517 because we are using Razor to process the form.</p>
+                <p>You will greatly enjoy CPSC1517 because we are using Razor to process the form.</p>
             }
             else
             {
-            <p>Too bad. CPSC1517 uses Razor to process the form..</p>
+                <p>Too bad. CPSC1517 uses Razor to process the form..</p>
             }
         }
     }
 }
+
 <form id="theform" method="post">
     <div class="col-md-offset-2">
         <label for="languagegroup">
