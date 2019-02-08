@@ -5,12 +5,12 @@
     var searcharg = Request.Form["searcharg"];
     var regionid = "";
     var description = "";
-    var thebutton = Request.Form["Formbutton"];
+    var thebutton = Request.Form["formbutton"];
 
     //remember the 1st pass of the page, searcharg will
     //   be null BUT for the db query it needs to be a
     //   number
-    if(string.IsNullOrEmpty(searcharg))
+    if (string.IsNullOrEmpty(searcharg))
     {
         searcharg = "0";
     }
@@ -31,22 +31,60 @@
     //.Query() used when you expect 0, 1 or more records to be returned
     //.QuesryValue() used when you expect a single value (not record) to be returned
     var results = db.QuerySingle(querycommand, searcharg);
+}
     @section head{
 
     <link href="~/Content/MyCustomStyles.css" rel="stylesheet" />
-        }
 }
 
 @section banner{
     <h1>Database: Single query</h1>
 }
 
+@if(IsPost)
+{
+    if (thebutton.Equals("clear"))
+    {
+        regionid = "";
+        description = "";
+        searcharg = "0";
+    }
+    else
+    {
+        //.QuerySingle() uses == null to test for no results
+        //.Query() uses .Count() == 0 to test for no results
+        if (results == null)
+        {
+            //removing old results
+            regionid = "";
+            description = "";
+            <p><span style="color:blue">There is no region for the supplied region id.</span></p>
+        }
+        else
+        {
+            //there is a record to display
+            //How does one access the data on the record?
+
+            //There are two ways to access a column on your record
+            //a) using an index for the column eg.  xxxx[index] 
+            //b) using the column title property name eg. xxxx.columnname
+
+            //you must be concerned with non string datatypes being returns
+            //     as part of your results.
+            //output fields expect strings.
+            //var varaibles obtain their datatype when first used.
+            regionid = results[0].ToString();
+            description = results.RegionDescription;
+        }
+    }              
+}
+
 <form id="theform" method="post">
     <div class="row">
         <div class="col-md-4">
             <label for="searcharg">Enter Region ID:</label>
-            <input type="text" id="searcharg" name="searcharg"
-                   placeholder="enter region id"
+            <input type="number" id="searcharg" name="searcharg"
+                   placeholder="enter region id" step="1" min="0" 
                    value="@searcharg" />
             <br/>
             <button type="submit" id="formbutton" name="formbutton"
