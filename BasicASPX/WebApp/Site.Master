@@ -70,9 +70,9 @@
                          StaticMenuStyle-CssClass="nav navbar-nav"
                          StaticSelectedStyle-CssClass="active"
                          DynamicMenuStyle-CssClass="dropdown-menu"
-                         IncludeStyleBlock="false" EnableTheming="false" Enabled="false">
+                         IncludeStyleBlock="false" EnableTheming="false" EnableViewState="false">
                     </asp:Menu>
-                    <asp:SiteMapDataSource ID="SiteMapDS" runat="server" 
+                    <asp:SiteMapDataSource ID="SiteMapDS" runat="server"
                          ShowStartingNode="false"/>
                 </div>
             </div>

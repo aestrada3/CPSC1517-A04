@@ -9,8 +9,9 @@
         b) for each sub menu item, add a siteMapNode self closing tag
         -->
     <siteMapNode url="" title="SamplePages" description="">
-      <siteMapNode url="~/SampelePages/FirstPage.aspx" title="Hello World"  description="" />
+      <siteMapNode url="~/SampelePages/FirstPage.aspx" title="FirstPage"  description="" />
       <siteMapNode url="~/SampelePages/BasicControls.aspx" title="Basic Controls"  description="" />
     </siteMapNode>
+    
   </siteMapNode>
 </siteMap>
