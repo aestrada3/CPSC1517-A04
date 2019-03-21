@@ -23,7 +23,7 @@ namespace NorthwindSystem.DAL
     //this context class needs to inherit DbContext from
     //  EntityFramework
     //make sure this is "internal"
-    internal class NorthwindContext:DbContext
+    internal class NorthwindContext : DbContext
     {
         //setup your class default contructor to supply your connection string name
         // to the DbContext inherited class
