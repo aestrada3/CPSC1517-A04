@@ -35,7 +35,7 @@ namespace NorthwindSystem.Data
         //      [key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int ProductID { get; set; }
-        public string ProductNAme { get; set; }
+        public string ProductName { get; set; }
         public int? SupplierID { get; set; }
         public int? CategoryID { get; set; }
         public string QuantityPerUnit
